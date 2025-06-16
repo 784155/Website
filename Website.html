@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Canada’s Rise: 4 Big Moments That Shaped Canada’s History</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Montserrat:wght@700&display=swap" rel="stylesheet" />
+<style>
+  /* RESET */
+  *, *::before, *::after {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+  html, body {
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #fff 0%, #f8f8f8 100%);
+    color: #222;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow: hidden;
+  }
+
+  /* BACKGROUND ANIMATION */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle at center, #bf1e2e22, transparent 70%);
+    pointer-events: none;
+    animation: pulseBG 15s ease-in-out infinite;
+    z-index: -1;
+  }
+  @keyframes pulseBG {
+    0%, 100% {opacity: 0.15;}
+    50% {opacity: 0.3;}
+  }
+
+  /* HEADER */
+  header {
+    background-color: #bf1e2e;
+    color: #fff;
+    padding: 1.3rem 2rem;
+    box-shadow: 0 5px 15px rgba(191, 30, 46, 0.6);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  header h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 2.1rem;
+    letter-spacing: 0.07em;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.25);
+  }
+
+  /* NAV */
+  nav {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  nav button {
+    background: transparent;
+    border: none;
+    color: #f2f2f2;
+    font-weight: 600;
+    font-size: 1.05rem;
+    padding: 0.55rem 1.2rem;
+    border-radius: 12px 12px 0 0;
+    cursor: pointer;
+    transition:
+      background-color 0.35s ease,
+      color 0.3s ease,
+      box-shadow 0.3s ease;
+    box-shadow: inset 0 -4px 0 transparent;
+    outline-offset: 3px;
+  }
+  nav button:hover,
+  nav button:focus-visible {
+    color: #bf1e2e;
+    background-color: #fff;
+    box-shadow: inset 0 -4px 0 #bf1e2e;
+  }
+  nav button.active {
+    background-color: #fff;
+    color: #bf1e2e;
+    font-weight: 700;
+    box-shadow: inset 0 -4px 0 #bf1e2e;
+  }
+
+  /* MAIN CONTAINER */
+  main {
+    margin: 2rem auto 3rem;
+    max-width: 980px;
+    background-color: #fff;
+    border-radius: 18px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+    padding: 3rem 3.5rem 3rem 3.5rem;
+    height: calc(100vh - 110px);
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    position: relative;
+  }
+
+  /* TAB PANELS */
+  section {
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  section.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* HEADINGS */
+  h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: #bf1e2e;
+    margin-bottom: 1.2rem;
+    text-shadow: 1px 1px 2px rgba(191,30,46,0.3);
+  }
+  h2 {
+    font-size: 2.2rem;
+    letter-spacing: 0.03em;
+  }
+  h3 {
+    font-size: 1.7rem;
+  }
+
+  /* PARAGRAPHS */
+  p {
+    font-size: 1.13rem;
+    line-height: 1.7;
+    margin-bottom: 1.6rem;
+    color: #444;
+  }
+
+  /* LISTS */
+  ul {
+    list-style-type: none;
+    margin-top: 1rem;
+    margin-left: 1.3rem;
+    font-size: 1.13rem;
+    color: #444;
+  }
+  ul li {
+    margin-bottom: 1.1rem;
+    padding-left: 1.4rem;
+    position: relative;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+  ul li::before {
+    content: "✔";
+    color: #bf1e2e;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-weight: 900;
+    font-size: 1.2rem;
+    line-height: 1;
+  }
+
+  /* IMAGES */
+  img {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    margin: 1.8rem 0 2.5rem;
+    transition: transform 0.4s ease;
+    cursor: default;
+    object-fit: cover;
+  }
+  img:hover {
+    transform: scale(1.04);
+  }
+
+  /* FIRST TAB SLIDER */
+  .slider {
+    max-width: 640px;
+    margin: 1rem auto 2.5rem;
+    border-radius: 22px;
+    box-shadow: 0 18px 45px rgba(191, 30, 46, 0.2);
+    background-color: #fff;
+    position: relative;
+    overflow: hidden;
+    border: 3.5px solid #bf1e2e;
+    user-select: none;
+  }
+  .slides {
+    display: flex;
+    width: 300%;
+    transition: transform 0.5s ease-in-out;
+  }
+  .slides img {
+    width: 100%;
+    height: 360px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    object-fit: cover;
+  }
+
+  /* SLIDER NAVIGATION BUTTONS */
+  .slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #bf1e2ecc;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    padding: 0.35rem 0.8rem;
+    border-radius: 50%;
+    cursor: pointer;
+    user-select: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    transition: background-color 0.3s ease;
+    z-index: 10;
+  }
+  .slider-button:hover {
+    background-color: #bf1e2eee;
+  }
+  .slider-button:focus-visible {
+    outline: 2px solid #fff;
+  }
+  .slider-button.prev {
+    left: 12px;
+  }
+  .slider-button.next {
+    right: 12px;
+  }
+
+  /* DOTS NAV */
+  .dots {
+    text-align: center;
+    margin-top: 0.7rem;
+  }
+  .dot {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin: 0 7px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .dot.active {
+    background-color: #bf1e2e;
+  }
+
+  /* TIMELINE */
+  .timeline {
+    position: relative;
+    margin: 3rem 0 1.5rem;
+    padding-left: 30px;
+    border-left: 4px solid #bf1e2e;
+  }
+  .timeline-item {
+    margin-bottom: 2.5rem;
+    position: relative;
+  }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -16px;
+    top: 6px;
+    width: 12px;
+    height: 12px;
+    background: #bf1e2e;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(191, 30, 46, 0.8);
+  }
+  .timeline-item strong {
+    font-weight: 700;
+    color: #bf1e2e;
+    font-size: 1.15rem;
+  }
+  .timeline-item p {
+    margin-top: 0.4rem;
+    color: #555;
+    font-size: 1rem;
+    max-width: 650px;
+  }
+
+  /* SOURCES LIST */
+  .sources-list li {
+    margin-bottom: 1rem;
+    font-weight: 600;
+    color: #444;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .sources-list img {
+    max-height: 40px;
+    border-radius: 8px;
+    filter: drop-shadow(0 0 2px rgba(0,0,0,0.12));
+  }
+  .sources-list a {
+    color: #bf1e2e;
+    text-decoration: none;
+  }
+  .sources-list a:hover,
+  .sources-list a:focus-visible {
+    text-decoration: underline;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 820px) {
+    main {
+      height: auto;
+      padding: 2rem 1.8rem 3rem 1.8rem;
+      margin: 1rem 1rem 2rem 1rem;
+    }
+    .slider {
+      max-width: 100%;
+      border-width: 2.5px;
+    }
+    .slides img {
+      height: 250px;
+    }
+    nav {
+      justify-content: center;
+      gap: 0.7rem;
+    }
+    nav button {
+      font-size: 0.9rem;
+      padding: 0.5rem 1rem;
+    }
+  }
+  @media (max-width: 480px) {
+    header h1 {
+      font-size: 1.7rem;
+    }
+    nav button {
+      font-size: 0.85rem;
+      padding: 0.45rem 0.9rem;
+    }
+    .slides img {
+      height: 180px;
+    }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Canada’s Rise</h1>
+  <nav aria-label="Primary navigation tabs">
+    <button class="tab-btn active" data-tab="home" aria-selected="true" role="tab" aria-controls="home" tabindex="0">Home</button>
+    <button class="tab-btn" data-tab="vimy" role="tab" aria-controls="vimy" tabindex="-1">Vimy Ridge</button>
+    <button class="tab-btn" data-tab="westminster" role="tab" aria-controls="westminster" tabindex="-1">Statute of Westminster</button>
+    <button class="tab-btn" data-tab="charter" role="tab" aria-controls="charter" tabindex="-1">Charter of Rights</button>
+    <button class="tab-btn" data-tab="reconciliation" role="tab" aria-controls="reconciliation" tabindex="-1">Reconciliation</button>
+    <button class="tab-btn" data-tab="timeline" role="tab" aria-controls="timeline" tabindex="-1">Timeline</button>
+    <button class="tab-btn" data-tab="reflection" role="tab" aria-controls="reflection" tabindex="-1">Reflection</button>
+    <button class="tab-btn" data-tab="sources" role="tab" aria-controls="sources" tabindex="-1">Sources</button>
+  </nav>
+</header>
+<main role="tabpanel" tabindex="0" aria-live="polite">
+  <!-- HOME with slider -->
+  <section id="home" class="active" role="tabpanel" aria-labelledby="home" tabindex="0">
+    <h2>Canada’s Rise: 4 Big Moments That Shaped Canada’s History</h2>
+    <p>Discover how Canada evolved through pivotal moments that shaped its identity, sovereignty, and values.</p>
+
+    <div class="slider" aria-label="Image slider showing important moments in Canadian history">
+      <div class="slides" aria-live="off">
+        <img src="https://valourcanada.ca/wp-content/uploads/2019/07/Vimy20Ridge20main_Reg.jpg" alt="Battle of Vimy Ridge battlefield" />
+        <img src="https://parliamentum.org/wp-content/uploads/2012/06/statute-of-westminster-tidridge-2011-47.jpg" alt="Statute of Westminster document" />
+        <img src="https://ehprnh2mwo3.exactdn.com/wp-content/uploads/2021/02/130305945_3834244469931655_7528870465902874041_o.jpg?strip=all&lossy=1&ssl=1" alt="Truth and Reconciliation Commission meeting" />
+      </div>
+      <button class="slider-button prev" aria-label="Previous image">&#10094;</button>
+      <button class="slider-button next" aria-label="Next image">&#10095;</button>
+      <div class="dots" role="tablist" aria-label="Image navigation dots">
+        <button class="dot active" role="tab" aria-selected="true" tabindex="0" aria-controls="slide1" data-slide="0"></button>
+        <button class="dot" role="tab" aria-selected="false" tabindex="-1" aria-controls="slide2" data-slide="1"></button>
+        <button class="dot" role="tab" aria-selected="false" tabindex="-1" aria-controls="slide3" data-slide="2"></button>
+      </div>
+    </div>
+
+    <p>Use the tabs above to explore each historic milestone in detail.</p>
+  </section>
+
+  <!-- VIMY RIDGE -->
+  <section id="vimy" role="tabpanel" aria-labelledby="vimy" tabindex="0">
+    <h3>Battle of Vimy Ridge (1917)</h3>
+    <img src="https://valourcanada.ca/wp-content/uploads/2019/07/Vimy20Ridge20main_Reg.jpg" alt="Battle of Vimy Ridge battlefield" />
+    <p>The Battle of Vimy Ridge united all four Canadian divisions in a coordinated attack, marking Canada’s emergence as a unified and capable force on the world stage. It symbolizes Canadian courage, determination, and national pride.</p>
+  </section>
+
+  <!-- STATUTE OF WESTMINSTER -->
+  <section id="westminster" role="tabpanel" aria-labelledby="westminster" tabindex="0">
+    <h3>Statute of Westminster (1931)</h3>
+    <img src="https://parliamentum.org/wp-content/uploads/2012/06/statute-of-westminster-tidridge-2011-47.jpg" alt="Statute of Westminster document" />
+    <p>This landmark statute granted Canada legislative independence from Britain, allowing Canada to create laws without British approval. It was a major step toward full sovereignty.</p>
+  </section>
+
+  <!-- CHARTER OF RIGHTS -->
+  <section id="charter" role="tabpanel" aria-labelledby="charter" tabindex="0">
+    <h3>Charter of Rights and Freedoms (1982)</h3>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/Canadian_Charter_of_Rights_and_Freedoms_%28English%29.jpg" alt="Charter of Rights and Freedoms document" />
+    <p>The Charter enshrined fundamental rights and freedoms for all Canadians, reinforcing equality, democracy, and justice. It reshaped Canada’s legal landscape with a strong commitment to human rights.</p>
+  </section>
+
+  <!-- TRUTH AND RECONCILIATION -->
+  <section id="reconciliation" role="tabpanel" aria-labelledby="reconciliation" tabindex="0">
+    <h3>Truth and Reconciliation Commission (2008–2015)</h3>
+    <img src="https://ehprnh2mwo3.exactdn.com/wp-content/uploads/2021/02/130305945_3834244469931655_7528870465902874041_o.jpg?strip=all&lossy=1&ssl=1" alt="Truth and Reconciliation Commission meeting" />
+    <p>The TRC acknowledged the impact of residential schools on Indigenous peoples and sought to promote healing and reconciliation through education and dialogue. This process aims to build a more just and inclusive Canada.</p>
+  </section>
+
+  <!-- TIMELINE -->
+  <section id="timeline" role="tabpanel" aria-labelledby="timeline" tabindex="0">
+    <h2>Interactive Timeline</h2>
+    <div class="timeline" aria-label="Key moments in Canadian history timeline">
+      <div class="timeline-item" tabindex="0" role="button" aria-describedby="desc1">
+        <strong>1917 - Battle of Vimy Ridge</strong>
+        <p id="desc1">A unified Canadian victory that symbolized national pride and military strength.</p>
+      </div>
+      <div class="timeline-item" tabindex="0" role="button" aria-describedby="desc2">
+        <strong>1931 - Statute of Westminster</strong>
+        <p id="desc2">Canada gained legislative independence from Britain.</p>
+      </div>
+      <div class="timeline-item" tabindex="0" role="button" aria-describedby="desc3">
+        <strong>1982 - Charter of Rights and Freedoms</strong>
+        <p id="desc3">Established fundamental rights and freedoms for Canadians.</p>
+      </div>
+      <div class="timeline-item" tabindex="0" role="button" aria-describedby="desc4">
+        <strong>2008 - Truth and Reconciliation Commission</strong>
+        <p id="desc4">Acknowledged residential school impacts and promoted healing with Indigenous peoples.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- REFLECTION -->
+  <section id="reflection" role="tabpanel" aria-labelledby="reflection" tabindex="0">
+    <h2>Reflection</h2>
+    <p>Canada’s history is full of important moments that helped shape who we are today. The Battle of Vimy Ridge showed how Canadians could come together and fight as one, proving our strength and unity. Later, the Statute of Westminster gave Canada the power to make its own laws, which was a big step toward being truly independent from Britain. The Charter of Rights and Freedoms made sure that everyone in Canada has basic rights and freedoms, which is key for a fair and equal society. Finally, the Truth and Reconciliation Commission made us face some painful parts of our past and encouraged healing between Indigenous peoples and all Canadians. These events helped Canada become stronger, more respectful, and more inclusive. Learning about them made me realize how important it is to remember history, respect others, and keep working to make Canada a better place for everyone.</p>
+  </section>
+
+  <!-- SOURCES -->
+  <section id="sources" role="tabpanel" aria-labelledby="sources" tabindex="0">
+    <h2>Sources & Further Reading</h2>
+    <ul class="sources-list" role="list">
+      <li>
+        <img src="https://valourcanada.ca/wp-content/themes/valourcanada2018/assets/images/logo.svg" alt="Valour Canada Logo" />
+        <a href="https://valourcanada.ca/" target="_blank" rel="noopener noreferrer">Valour Canada</a>
+      </li>
+      <li>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Statute_of_Westminster%2C_1931_-_Canada.png/220px-Statute_of_Westminster%2C_1931_-_Canada.png" alt="Statute of Westminster" />
+        <a href="https://www.thecanadianencyclopedia.ca/en/article/statute-of-westminster-1931" target="_blank" rel="noopener noreferrer">The Canadian Encyclopedia: Statute of Westminster</a>
+      </li>
+      <li>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Canadian_Charter_of_Rights_and_Freedoms_Logo.svg/120px-Canadian_Charter_of_Rights_and_Freedoms_Logo.svg.png" alt="Canadian Charter Logo" />
+        <a href="https://www.justice.gc.ca/eng/csj-sjc/rfc-dlc/ccrf-ccdl/" target="_blank" rel="noopener noreferrer">Government of Canada: Charter of Rights and Freedoms</a>
+      </li>
+      <li>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Truth_and_Reconciliation_Commission_logo.svg/120px-Truth_and_Reconciliation_Commission_logo.svg.png" alt="Truth and Reconciliation Commission logo" />
+        <a href="https://nctr.ca/" target="_blank" rel="noopener noreferrer">National Centre for Truth and Reconciliation</a>
+      </li>
+    </ul>
+  </section>
+</main>
+
+<script>
+  // Tab navigation logic
+  const tabs = document.querySelectorAll('nav button.tab-btn');
+  const sections = document.querySelectorAll('main > section');
+
+  function activateTab(newTab) {
+    tabs.forEach(tab => {
+      const selected = tab === newTab;
+      tab.classList.toggle('active', selected);
+      tab.setAttribute('aria-selected', selected);
+      tab.setAttribute('tabindex', selected ? '0' : '-1');
+    });
+    sections.forEach(section => {
+      section.classList.toggle('active', section.id === newTab.dataset.tab);
+    });
+    // Focus main content for screen readers
+    document.querySelector('main').focus();
+  }
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => activateTab(tab));
+    tab.addEventListener('keydown', (e) => {
+      let index = Array.from(tabs).indexOf(document.activeElement);
+      if(e.key === 'ArrowRight' || e.key === 'ArrowDown'){
+        e.preventDefault();
+        let next = (index + 1) % tabs.length;
+        tabs[next].focus();
+      } else if(e.key === 'ArrowLeft' || e.key === 'ArrowUp'){
+        e.preventDefault();
+        let prev = (index - 1 + tabs.length) % tabs.length;
+        tabs[prev].focus();
+      } else if(e.key === 'Home'){
+        e.preventDefault();
+        tabs[0].focus();
+      } else if(e.key === 'End'){
+        e.preventDefault();
+        tabs[tabs.length-1].focus();
